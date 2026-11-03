@@ -132,10 +132,22 @@
   }
 
   /* ---------- Especialistas: ver formação ---------- */
+  // Anima a altura em px (funciona em todos os navegadores) e libera para "auto" ao terminar.
   $$(".person").forEach((p) => {
     const btn = $(".person__toggle", p);
+    const more = $(".person__more", p);
+    more.addEventListener("transitionend", (e) => {
+      if (e.propertyName === "height" && p.classList.contains("is-open")) more.style.height = "auto";
+    });
     btn.addEventListener("click", () => {
       const open = p.classList.toggle("is-open");
+      if (open) {
+        more.style.height = `${more.scrollHeight}px`;
+      } else {
+        more.style.height = `${more.scrollHeight}px`; // parte da altura atual para poder animar até 0
+        void more.offsetHeight;
+        more.style.height = "0px";
+      }
       btn.setAttribute("aria-expanded", open);
       btn.firstChild.textContent = open ? "Fechar " : "Ver formação ";
     });

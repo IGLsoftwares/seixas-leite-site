@@ -585,12 +585,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .person__oab { font-size: .78rem; color: var(--muted); margin: .3rem 0 1rem; }
 .person__tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .person__tags li { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: var(--cream); color: var(--brown); }
-.person__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
-.person__list { overflow: hidden; margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.person__more { height: 0; overflow: hidden; transition: height .45s var(--ease); }
+.person__list { margin: 0; padding: 16px 0 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
 .person__list li { position: relative; padding-left: 16px; }
 .person__list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--coffee); }
-.person.is-open .person__more { grid-template-rows: 1fr; }
-.person.is-open .person__list { padding-top: 16px; }
 .person__toggle { margin-top: 18px; border: 0; background: none; padding: 0; color: var(--coffee); font-weight: 600; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
 .person__toggle span { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--coffee); display: grid; place-items: center; transition: transform .4s var(--ease), background .3s, color .3s; }
 .person.is-open .person__toggle span { transform: rotate(45deg); background: var(--coffee); color: #fff; }
