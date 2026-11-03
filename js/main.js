@@ -8,9 +8,15 @@
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 
   /* ---------- Preloader ---------- */
-  const done = () => document.documentElement.classList.add("is-loaded");
-  window.addEventListener("load", () => setTimeout(done, 500));
-  setTimeout(done, 2500); // garantia caso alguma imagem demore
+  // A logo fica pelo menos 2s na tela; depois a página completa aparece.
+  const INTRO_MS = 2000;
+  const done = () => {
+    if (document.documentElement.classList.contains("is-loaded")) return;
+    document.documentElement.classList.add("is-loaded");
+    document.dispatchEvent(new Event("intro:done"));
+  };
+  window.addEventListener("load", () => setTimeout(done, Math.max(0, INTRO_MS - performance.now())));
+  setTimeout(done, 4500); // garantia caso alguma imagem demore
 
   /* ---------- Espaços de imagem vazios ---------- */
   // Enquanto o cliente não envia as fotos, o espaço mostra um fundo da marca + legenda.
@@ -77,8 +83,7 @@
   if (heroSlide && !reduceMotion) {
     heroSlide.classList.remove("is-active");
     const play = () => heroSlide.classList.add("is-active");
-    window.addEventListener("load", () => setTimeout(play, 700));
-    setTimeout(play, 2700);
+    document.addEventListener("intro:done", () => setTimeout(play, 250));
   }
 
   /* ---------- Abas de serviços ---------- */
