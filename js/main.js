@@ -179,31 +179,6 @@
     build();
   });
 
-  /* ---------- Contadores ---------- */
-  const countObs = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        countObs.unobserve(en.target);
-        const el = en.target;
-        const end = +el.dataset.counter;
-        const pre = el.dataset.prefix || "";
-        const suf = el.dataset.suffix || "";
-        const fmt = (v) => pre + Math.round(v).toLocaleString("pt-BR") + suf;
-        if (reduceMotion) return (el.textContent = fmt(end));
-        const t0 = performance.now();
-        const dur = 1800;
-        const tick = (t) => {
-          const p = Math.min((t - t0) / dur, 1);
-          el.textContent = fmt(end * (1 - Math.pow(1 - p, 3)));
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      }),
-    { threshold: 0.6 }
-  );
-  $$("[data-counter]").forEach((el) => countObs.observe(el));
-
   /* ---------- Revelar ao rolar ---------- */
   const revealObs = new IntersectionObserver(
     (entries) =>
