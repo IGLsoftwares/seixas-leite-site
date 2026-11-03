@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261103">
+  <link rel="stylesheet" href="css/style.css?v=20261103b">
 </head>
 <body>
 
@@ -63,6 +63,16 @@
     <symbol id="ico-phone" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+      </g>
+    </symbol>
+    <symbol id="ico-sound" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>
+      </g>
+    </symbol>
+    <symbol id="ico-mute" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6M16 9l6 6"/>
       </g>
     </symbol>
     <symbol id="ico-star" viewBox="0 0 24 24">
@@ -375,16 +385,46 @@
             <li class="step reveal"><span class="step__n">4</span><b>Acompanhamento</b><p>Você recebe atualizações a cada passo do processo.</p></li>
           </ol>
         </div>
+      </div>
+    </section>
 
-        <!-- Ações sociais -->
-        <div class="social reveal">
-          <figure class="slot social__media" data-label="Foto de ação social"><img src="assets/img/acao-social.jpg" alt=""></figure>
-          <div class="social__text">
-            <p class="eyebrow eyebrow--dark">Ações Sociais</p>
-            <h3>Direito também é <em>cuidar da comunidade</em></h3>
-            <p>Participamos de ações de orientação jurídica gratuita e projetos sociais em Manaus, levando informação sobre direitos trabalhistas e previdenciários a quem mais precisa.</p>
-            <a href="https://www.instagram.com/seixaseleite.adv/" target="_blank" rel="noopener" class="link-arrow">Veja nos destaques do Instagram <svg class="ico"><use href="#ico-arrow"/></svg></a>
-          </div>
+    <!-- ================= INSTAGRAM / REELS ================= -->
+    <section class="section reels marble" id="instagram">
+      <div class="container">
+        <header class="section__head reveal">
+          <svg class="column-icon"><use href="#column"/></svg>
+          <p class="eyebrow eyebrow--dark">Instagram</p>
+          <h2 class="section__title">Fique por dentro e <em>siga as dicas</em></h2>
+          <p class="section__lead">Orientações rápidas sobre os seus direitos, direto do nosso Instagram.</p>
+        </header>
+
+        <div class="reels__track reveal" data-reels>
+          <figure class="reel">
+            <video src="assets/video/reel-1.mp4" poster="assets/video/reel-1.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Reel 1 do Instagram @seixaseleite.adv"></video>
+            <figcaption class="reel__top"><img src="assets/img/logo.png" alt="" width="28" height="28"> @seixaseleite.adv</figcaption>
+            <button class="reel__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico ico--off"><use href="#ico-mute"/></svg><svg class="ico ico--on"><use href="#ico-sound"/></svg>
+            </button>
+          </figure>
+          <figure class="reel">
+            <video src="assets/video/reel-2.mp4" poster="assets/video/reel-2.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Reel 2 do Instagram @seixaseleite.adv"></video>
+            <figcaption class="reel__top"><img src="assets/img/logo.png" alt="" width="28" height="28"> @seixaseleite.adv</figcaption>
+            <button class="reel__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico ico--off"><use href="#ico-mute"/></svg><svg class="ico ico--on"><use href="#ico-sound"/></svg>
+            </button>
+          </figure>
+          <figure class="reel">
+            <video src="assets/video/reel-3.mp4" poster="assets/video/reel-3.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Reel 3 do Instagram @seixaseleite.adv"></video>
+            <figcaption class="reel__top"><img src="assets/img/logo.png" alt="" width="28" height="28"> @seixaseleite.adv</figcaption>
+            <button class="reel__sound" type="button" aria-label="Ativar som" aria-pressed="false">
+              <svg class="ico ico--off"><use href="#ico-mute"/></svg><svg class="ico ico--on"><use href="#ico-sound"/></svg>
+            </button>
+          </figure>
+        </div>
+
+        <div class="reels__foot reveal">
+          <p class="reels__hint">Passe o mouse sobre o vídeo para ouvir. No celular, toque no vídeo.</p>
+          <a href="https://www.instagram.com/seixaseleite.adv/" target="_blank" rel="noopener" class="btn btn--coffee"><svg class="ico"><use href="#ico-ig"/></svg> Seguir @seixaseleite.adv</a>
         </div>
       </div>
     </section>
@@ -577,6 +617,6 @@
   </a>
   <a href="#inicio" class="to-top" aria-label="Voltar ao topo"><svg class="ico"><use href="#ico-arrow"/></svg></a>
 
-  <script src="js/main.js?v=20261103"></script>
+  <script src="js/main.js?v=20261103b"></script>
 </body>
 </html>

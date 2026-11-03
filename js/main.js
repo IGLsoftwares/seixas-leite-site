@@ -191,6 +191,53 @@
     build();
   });
 
+  /* ---------- Reels do Instagram ---------- */
+  // Todos rodam mudos; só o que está sob o mouse (ou foi tocado) toca com som.
+  const reelsWrap = $("[data-reels]");
+  if (reelsWrap) {
+    const reels = $$(".reel", reelsWrap);
+    const canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const playMuted = (v) => { v.muted = true; v.play().catch(() => {}); };
+
+    const setSound = (reel, on) => {
+      const v = $("video", reel);
+      reels.forEach((r) => {
+        if (r !== reel && r.classList.contains("is-sound")) setSound(r, false);
+      });
+      reel.classList.toggle("is-sound", on);
+      $(".reel__sound", reel).setAttribute("aria-pressed", on);
+      $(".reel__sound", reel).setAttribute("aria-label", on ? "Desativar som" : "Ativar som");
+      if (!on) return playMuted(v);
+      v.muted = false;
+      v.play().catch(() => {
+        // O navegador só libera som depois do primeiro clique/toque na página.
+        reel.classList.remove("is-sound");
+        reel.classList.add("needs-tap");
+        playMuted(v);
+      });
+    };
+
+    reels.forEach((reel) => {
+      if (canHover) {
+        reel.addEventListener("mouseenter", () => setSound(reel, true));
+        reel.addEventListener("mouseleave", () => { reel.classList.remove("needs-tap"); setSound(reel, false); });
+      }
+      reel.addEventListener("click", () => {
+        reel.classList.remove("needs-tap");
+        setSound(reel, !reel.classList.contains("is-sound"));
+      });
+    });
+
+    // Economiza bateria: pausa os vídeos fora da tela e retoma (mudo) quando voltam.
+    const reelObs = new IntersectionObserver((entries) =>
+      entries.forEach(({ target, isIntersecting }) => {
+        const v = $("video", target);
+        if (isIntersecting) v.play().catch(() => {});
+        else { v.pause(); if (target.classList.contains("is-sound")) setSound(target, false); }
+      }), { threshold: 0.25 });
+    reels.forEach((r) => reelObs.observe(r));
+  }
+
   /* ---------- Revelar ao rolar ---------- */
   const revealObs = new IntersectionObserver(
     (entries) =>
