@@ -575,7 +575,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transition: transform .6s var(--ease), box-shadow .6s var(--ease);
 }
 .person:hover { transform: translateY(-8px); box-shadow: 0 34px 60px -28px rgba(46, 24, 10, .55); }
-.person__photo { aspect-ratio: 4 / 4.4; }
+.person__photo { aspect-ratio: 750 / 790; }
 .person__photo img { transition: transform 1.2s var(--ease); }
 .person:hover .person__photo img { transform: scale(1.05); }
 .person__photo.is-empty::before { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 100'%3E%3Cpath fill='%23f0eadc' fill-opacity='.22' d='M4 4h52v4H4zM8 10h44v3H8zM12 15h36v3H12zM15 20h3v62h-3zM21 20h3v62h-3zM27 20h3v62h-3zM33 20h3v62h-3zM39 20h3v62h-3zM12 84h36v3H12zM8 89h44v3H8zM4 94h52v4H4z'/%3E%3C/svg%3E") no-repeat center 40% / auto 45%; }
