@@ -7,17 +7,6 @@
   const openWhatsApp = (text) =>
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 
-  /* ---------- Preloader ---------- */
-  // A logo fica pelo menos 2s na tela; depois a página completa aparece.
-  const INTRO_MS = 2000;
-  const done = () => {
-    if (document.documentElement.classList.contains("is-loaded")) return;
-    document.documentElement.classList.add("is-loaded");
-    document.dispatchEvent(new Event("intro:done"));
-  };
-  window.addEventListener("load", () => setTimeout(done, Math.max(0, INTRO_MS - performance.now())));
-  setTimeout(done, 4500); // garantia caso alguma imagem demore
-
   /* ---------- Espaços de imagem vazios ---------- */
   // Enquanto o cliente não envia as fotos, o espaço mostra um fundo da marca + legenda.
   $$(".slot").forEach((slot) => {
@@ -78,12 +67,11 @@
   );
 
   /* ---------- Hero: entrada animada do banner ---------- */
-  // O banner já vem ativo no HTML; reativamos quando o preloader sai para a animação aparecer.
+  // O site abre direto; o texto do banner entra logo no primeiro quadro.
   const heroSlide = $(".hero .slide");
   if (heroSlide && !reduceMotion) {
     heroSlide.classList.remove("is-active");
-    const play = () => heroSlide.classList.add("is-active");
-    document.addEventListener("intro:done", () => setTimeout(play, 250));
+    requestAnimationFrame(() => requestAnimationFrame(() => heroSlide.classList.add("is-active")));
   }
 
   /* ---------- Abas de serviços ---------- */
