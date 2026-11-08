@@ -2,15 +2,15 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.seixasleite.com.br" }],
-      "destination": "https://seixasleite.com.br/:path*",
+      "destination": "https://seixasleite.com.br/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "seixas-leite-site.vercel.app" }],
-      "destination": "https://seixasleite.com.br/:path*",
+      "destination": "https://seixasleite.com.br/$1",
       "permanent": true
     }
   ],
