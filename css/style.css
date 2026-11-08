@@ -8,6 +8,8 @@
 
 :root {
   --coffee: #753f1d;      /* marrom café dos posts */
+  --navy: #14284b;        /* azul-marinho: segunda cor principal */
+  --navy-deep: #0d1b33;
   --coffee-deep: #5a2f14;
   --coffee-ink: #2e180a;
   --brown: #753f1d;
@@ -134,7 +136,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--coffee-ink);
+  background: var(--navy);
   transform: translateY(101%);
   transition: transform .45s var(--ease);
 }
@@ -268,7 +270,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: 32px;
   padding: 32px 28px 40px;
   overflow-y: auto;
-  background: var(--coffee);
+  background: var(--navy);
   background-image: radial-gradient(90% 60% at 100% 0, rgba(255, 255, 255, .08), transparent), var(--marble-tex);
   color: var(--sand);
   clip-path: circle(0 at calc(100% - 40px) 0);
@@ -308,7 +310,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   height: 100svh;
   min-height: 640px;
   overflow: hidden;
-  background: var(--coffee-ink);
+  background: var(--navy-deep);
   color: var(--cream);
 }
 .hero__slides, .slide { position: absolute; inset: 0; }
@@ -326,8 +328,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(117, 63, 29, .95) 0%, rgba(117, 63, 29, .75) 38%, rgba(117, 63, 29, .08) 75%),
-    linear-gradient(0deg, rgba(90, 47, 20, .8), transparent 40%);
+    linear-gradient(90deg, rgba(20, 40, 75, .96) 0%, rgba(20, 40, 75, .8) 38%, rgba(20, 40, 75, .05) 78%),
+    linear-gradient(0deg, rgba(13, 27, 51, .7), transparent 40%);
 }
 
 /* Coluna gigante decorativa quando o banner está sem foto */
@@ -401,7 +403,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 767px) {
   .hero { min-height: 600px; }
-  .slide::after { background: linear-gradient(0deg, rgba(117, 63, 29, .97) 8%, rgba(117, 63, 29, .75) 50%, rgba(117, 63, 29, .2) 100%); }
+  .slide::after { background: linear-gradient(0deg, rgba(20, 40, 75, .98) 8%, rgba(20, 40, 75, .8) 50%, rgba(20, 40, 75, .1) 100%); }
   .slide__content { justify-content: flex-end; padding-bottom: 64px; }
   .slide .slide__media.is-empty::before { background-position: center 22%, center; background-size: auto 46%, cover; }
   .slide__actions .btn { flex: 1 1 100%; }
@@ -474,7 +476,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .tab.is-active { color: var(--cream); }
 .tab__icon { width: 20px; height: 20px; color: var(--bronze); transition: color .35s; }
 .tab.is-active .tab__icon { color: var(--paper); }
-.tabs__ink { position: absolute; top: 6px; bottom: 6px; left: 0; width: 0; border-radius: 999px; background: linear-gradient(135deg, var(--coffee), var(--coffee-deep)); transition: transform .5s var(--ease), width .5s var(--ease); }
+.tabs__ink { position: absolute; top: 6px; bottom: 6px; left: 0; width: 0; border-radius: 999px; background: linear-gradient(135deg, var(--navy), var(--navy-deep)); transition: transform .5s var(--ease), width .5s var(--ease); }
 
 .tab-panel { animation: panelIn .7s var(--ease); }
 .tab-panel[hidden] { display: none; }
@@ -492,7 +494,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   position: relative;
   overflow: hidden;
 }
-.panel::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(var(--bronze), var(--coffee)); }
+.panel::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(var(--navy), var(--coffee)); }
 .panel__intro h3 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: .95; color: var(--brown); }
 .panel__intro p:not(.t-script-inline) { color: var(--muted); }
 .panel__intro strong { color: var(--coffee); }
@@ -524,8 +526,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* =========================================================
    CHECKLIST
    ========================================================= */
-.checklist { background: var(--coffee); color: var(--cream); overflow: hidden; }
-.checklist::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 0 0, rgba(255, 255, 255, .07), transparent 70%), radial-gradient(50% 60% at 100% 100%, rgba(46, 24, 10, .35), transparent 70%); }
+.checklist { background: var(--navy); color: var(--cream); overflow: hidden; }
+.checklist::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 70% at 0 0, rgba(255, 255, 255, .07), transparent 70%), radial-gradient(50% 60% at 100% 100%, rgba(117, 63, 29, .45), transparent 70%); }
 .checklist__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
 .checklist__title { font-size: clamp(3rem, 8vw, 6rem); line-height: .9; margin-bottom: .4em; }
 .checklist__title .t-script { font-size: .55em; transform: rotate(-4deg); transform-origin: left; margin-bottom: .1em; }
@@ -644,8 +646,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .steps__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: s; position: relative; }
 .steps__list::before { content: ""; position: absolute; top: 34px; left: 12%; right: 12%; height: 1px; background: repeating-linear-gradient(90deg, var(--bronze) 0 6px, transparent 6px 12px); }
 .step { position: relative; text-align: center; padding: 0 8px; }
-.step__n { width: 68px; height: 68px; margin: 0 auto 18px; display: grid; place-items: center; border-radius: 50%; background: var(--coffee); color: var(--paper); font-family: var(--f-logo); font-size: 1.5rem; box-shadow: 0 0 0 8px var(--cream), 0 0 0 9px var(--line); position: relative; transition: transform .5s var(--ease), background .4s; }
-.step:hover .step__n { transform: translateY(-6px) rotate(-6deg); background: var(--bronze); }
+.step__n { width: 68px; height: 68px; margin: 0 auto 18px; display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: var(--paper); font-family: var(--f-logo); font-size: 1.5rem; box-shadow: 0 0 0 8px var(--cream), 0 0 0 9px var(--line); position: relative; transition: transform .5s var(--ease), background .4s; }
+.step:hover .step__n { transform: translateY(-6px) rotate(-6deg); background: var(--coffee); }
 .step b { display: block; font-family: var(--f-serif); font-size: 1.4rem; color: var(--coffee-ink); line-height: 1.2; margin-bottom: 6px; }
 .step p { color: var(--muted); font-size: .9rem; margin: 0; }
 .step.reveal:nth-child(2) { transition-delay: .1s; }
@@ -710,7 +712,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* =========================================================
    DEPOIMENTOS
    ========================================================= */
-.testimonials { background: linear-gradient(160deg, var(--coffee), var(--coffee-deep) 70%); color: var(--cream); overflow: hidden; }
+.testimonials { background: linear-gradient(160deg, var(--navy), var(--navy-deep) 70%); color: var(--cream); overflow: hidden; }
 .testimonials::before { content: ""; position: absolute; inset: 0; background-image: var(--marble-tex); background-size: 600px; opacity: .25; mix-blend-mode: screen; pointer-events: none; }
 .section__head--light .eyebrow { color: var(--sand); }
 .carousel { position: relative; }
@@ -831,7 +833,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* =========================================================
    FOOTER
    ========================================================= */
-.footer { background: var(--coffee-ink); color: rgba(245, 237, 227, .72); padding: 70px 0 28px; font-size: .9rem; }
+.footer { background: var(--navy-deep); color: rgba(245, 237, 227, .72); padding: 70px 0 28px; font-size: .9rem; }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 44px; border-bottom: 1px solid rgba(240, 234, 220, .2); }
 .footer__logo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--sand); margin-bottom: 18px; }
 .footer__brand p { font-family: var(--f-logo); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1.8; color: var(--paper); }
@@ -882,7 +884,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--coffee);
+  background: var(--navy);
   color: var(--paper);
   box-shadow: var(--shadow);
   opacity: 0;
