@@ -976,3 +976,60 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .values li { font-size: .64rem; padding-inline: 4px; }
   .values b { font-size: .74rem; }
 }
+
+/* =========================================================
+   BANNER COM FOTO DAS SÓCIAS
+   A foto fica à direita e sai um pouco da tela, deixando o texto sobre o azul.
+   ========================================================= */
+.slide__media { background: var(--navy); overflow: hidden; }
+.slide__media img {
+  --w: max(84vw, 150vh, 960px);
+  position: absolute;
+  top: 0;
+  right: calc(var(--w) * -.148);
+  left: auto;
+  width: var(--w);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  transform-origin: 62% 35%;
+}
+.slide::after {
+  background:
+    linear-gradient(90deg, rgba(20, 40, 75, 1) 0%, rgba(20, 40, 75, .98) 34%, rgba(20, 40, 75, .78) 44%, rgba(20, 40, 75, .1) 56%, rgba(20, 40, 75, 0) 62%),
+    linear-gradient(0deg, rgba(117, 63, 29, .6), rgba(117, 63, 29, 0) 26%);
+}
+
+/* Tela em pé: foto em cima (as duas sócias) e texto embaixo, até chegar a foto própria para celular */
+@media (max-width: 767px), (max-aspect-ratio: 5/4) {
+  .slide__media img {
+    --w: max(143vw, 62vh);
+    top: var(--header-h);
+    right: auto;
+    left: calc(50% - var(--w) * .5);
+    transform-origin: 50% 35%;
+  }
+  .slide::after {
+    background: linear-gradient(0deg, rgba(20, 40, 75, 1) 0%, rgba(20, 40, 75, 1) 44%, rgba(20, 40, 75, .55) 54%, rgba(20, 40, 75, 0) 66%);
+  }
+  .slide__content { justify-content: flex-end; padding-bottom: 56px; }
+  .hero__scroll { display: none; }
+}
+
+/* Altura: o título acompanha telas baixas e não encosta no topo */
+.slide__title { font-size: clamp(2.6rem, min(7.2vw, 12vh), 5.6rem); }
+.slide__content { padding-bottom: 48px; }
+
+/* Notebooks pequenos e tablets deitados: texto mais estreito para não cobrir o rosto */
+@media (min-width: 768px) and (max-width: 1199px) and (min-aspect-ratio: 5/4) {
+  .slide__content > * { max-width: 37vw; }
+  .slide__title { font-size: clamp(2.3rem, 5vw, 3.6rem); }
+  .slide__text { font-size: .9rem; }
+  .slide__actions { flex-direction: column; align-items: flex-start; }
+  .slide::after {
+    background:
+      linear-gradient(90deg, rgba(20, 40, 75, 1) 0%, rgba(20, 40, 75, .98) 33%, rgba(20, 40, 75, .6) 37%, rgba(20, 40, 75, .05) 42%, rgba(20, 40, 75, 0) 46%),
+      linear-gradient(0deg, rgba(117, 63, 29, .6), rgba(117, 63, 29, 0) 26%);
+  }
+  .hero__scroll { display: none; }
+}
