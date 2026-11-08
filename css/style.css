@@ -505,6 +505,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
   position: relative;
 }
+.card-mini--wide { grid-column: 1 / -1; }
 .card-mini::before { content: "✦"; color: var(--bronze); font-size: .8rem; display: block; margin-bottom: 6px; transition: transform .5s var(--ease); }
 .card-mini:hover { transform: translateY(-4px); border-color: var(--coffee); box-shadow: 0 16px 30px -18px rgba(117, 63, 29, .45); }
 .card-mini:hover::before { transform: rotate(180deg) scale(1.2); }
