@@ -109,7 +109,7 @@
     moveInk();
   });
 
-  /* ---------- Checklist "é comum, mas não é normal" ---------- */
+  /* ---------- Avaliação inicial (checklist) ---------- */
   const checklist = $("[data-checklist]");
   if (checklist) {
     const boxes = $$("input", checklist);
@@ -126,7 +126,7 @@
     checklist.addEventListener("submit", (e) => {
       e.preventDefault();
       const items = boxes.filter((b) => b.checked).map((b) => `• ${b.value}`);
-      openWhatsApp(`Olá! Fiz o teste no site da Seixas & Leite e me identifiquei com:\n${items.join("\n")}\n\nGostaria de uma orientação.`);
+      openWhatsApp(`Olá! Preenchi a avaliação inicial no site da Seixas & Leite e me identifiquei com:\n${items.join("\n")}\n\nGostaria de uma orientação.`);
     });
     update();
   }
@@ -295,7 +295,7 @@
         `Olá! Meu nome é ${data.get("nome")}.\nAssunto: ${data.get("area")}\nTelefone: ${data.get("telefone")}` +
           (data.get("mensagem").trim() ? `\n\n${data.get("mensagem").trim()}` : "")
       );
-      msg.textContent = "Abrimos o WhatsApp com sua mensagem. É só enviar!";
+      msg.textContent = "O WhatsApp foi aberto com a sua mensagem. Basta enviá-la.";
       form.reset();
     });
     $$("input, select", form).forEach((f) => f.addEventListener("input", () => f.closest(".field")?.classList.remove("is-invalid")));

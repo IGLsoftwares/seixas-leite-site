@@ -13,7 +13,7 @@ Salve em `assets/img/` com **exatamente** estes nomes. Enquanto a foto não exis
 | `larissa-leite.jpg` | Card da Larissa (Especialistas) | 900×1200 |
 | `banner-duo.jpg` | Banner largo das sócias (meio do site) | 1920×900 |
 | `escritorio-1.jpg` … `escritorio-3.jpg` | Galeria "Nosso Escritório" | 1200×1200 |
-| `assets/video/reel-1.mp4` … `reel-3.mp4` | Seção "Fique por dentro" (Reels) – vídeo vertical 9:16, com capa `reel-N.jpg` | 540×960 |
+| `assets/video/reel-1.mp4` … `reel-3.mp4` | Seção "Acompanhe nossas orientações" (Reels) – vídeo vertical 9:16, com capa `reel-N.jpg` | 540×960 |
 | `logo.png` | Topo e rodapé (substituir por versão em alta, de preferência PNG sem fundo) | 512×512 |
 
 Dica: no banner do topo, deixe as pessoas do lado **direito** da foto; o texto fica à esquerda.

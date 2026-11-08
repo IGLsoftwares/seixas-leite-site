@@ -995,3 +995,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .step b { font-size: 1rem; }
   .step p { font-size: .74rem; }
 }
+@media (max-width: 360px) {
+  .card-mini { padding: 12px 9px; }
+  .card-mini span { font-size: .7rem; }
+  .values li { padding-inline: 5px; }
+  .values b { font-size: .78rem; }
+}
+@media (max-width: 340px) {
+  .values { gap: 6px; }
+  .values li { font-size: .64rem; padding-inline: 4px; }
+  .values b { font-size: .74rem; }
+}
