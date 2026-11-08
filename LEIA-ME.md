@@ -20,7 +20,6 @@ Dica: no banner do topo, deixe as pessoas do lado **direito** da foto; o texto f
 
 ## Falta confirmar com o cliente (marcado com [ ] ou 00.000 no `index.html`)
 
-- Endereço (seção Localização + link "Como chegar" + mapa)
 - Números de OAB das sócias, CNPJ e OAB da sociedade (rodapé)
 - Depoimentos reais (destaque "Feedbacks"), com autorização dos clientes
 - Horário de atendimento

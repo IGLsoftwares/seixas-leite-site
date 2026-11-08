@@ -755,22 +755,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .faq__head { position: static; }
 }
 
-/* =========================================================
-   LOCALIZAÇÃO
-   ========================================================= */
-.location { background: var(--cream); }
-.location__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 5vw, 70px); align-items: stretch; }
-.info-list { display: grid; gap: 18px; margin: 10px 0 30px; }
-.info-list li { display: flex; gap: 16px; align-items: flex-start; }
-.info-list__ico { flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--coffee); box-shadow: inset 0 0 0 4px var(--marble); transition: background .35s, color .35s; }
-.info-list__ico svg { width: 21px; height: 21px; }
-.info-list li:hover .info-list__ico { background: var(--coffee); color: var(--paper); }
-.info-list b { font-family: var(--f-logo); font-size: .76rem; letter-spacing: .2em; text-transform: uppercase; color: var(--bronze); }
-.info-list p { margin: 2px 0 0; color: var(--ink); }
-.info-list a { color: var(--coffee); font-weight: 600; text-decoration: none; }
-.location__map { border-radius: calc(var(--radius) + 8px); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); min-height: 420px; position: relative; }
-.location__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: sepia(.35) saturate(.85) contrast(1.02); }
-@media (max-width: 860px) { .location__grid { grid-template-columns: 1fr; } .location__map { min-height: 340px; } }
 
 /* =========================================================
    CONTATO
@@ -907,12 +891,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    CELULAR: grids em 2–3 colunas (aproveita melhor a tela)
    ========================================================= */
 @media (max-width: 860px) {
-  /* Localização: endereço · horário · WhatsApp lado a lado */
-  .info-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .info-list li { flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 16px 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
-  .info-list b { font-size: .64rem; letter-spacing: .14em; }
-  .info-list p { font-size: .8rem; line-height: 1.45; }
-
   /* Valores do escritório em 3 colunas */
   .values { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
   .values li { padding: 40px 12px 14px; text-align: center; font-size: .8rem; line-height: 1.45; }
@@ -974,17 +952,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 400px) {
-  .info-list { gap: 8px; }
-  .info-list li { padding: 14px 6px; }
-  .info-list__ico { width: 40px; height: 40px; }
-  .info-list p { font-size: .74rem; }
   .values li { padding: 38px 8px 12px; font-size: .74rem; }
   .values b { font-size: 1rem; }
   .tab { font-size: .62rem; }
-}
-@media (max-width: 480px) {
-  .info-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .info-list li:last-child { grid-column: 1 / -1; flex-direction: row; justify-content: center; text-align: left; }
 }
 @media (max-width: 900px) and (min-width: 621px) {
   .checklist__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
