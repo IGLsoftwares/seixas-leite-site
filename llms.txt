@@ -1,0 +1,22 @@
+# Seixas & Leite
+
+> Escritório de advocacia em Manaus-AM, com atendimento presencial e online, que atua em Direito do Trabalho, Direito Previdenciário (BPC/LOAS) e assessoria jurídica e tributária para empresas. Sócias: Carla Seixas e Larissa Leite.
+
+O conteúdo deste site é informativo e não substitui a análise individual de cada caso por uma advogada.
+
+## Principais páginas
+
+- [Site oficial](https://seixasleite.com.br/): apresentação do escritório, áreas de atuação, especialistas, atendimento e contato
+- [Áreas de atuação](https://seixasleite.com.br/#servicos): Direito do Trabalho, BPC/LOAS e assessoria empresarial e tributária
+- [Especialistas](https://seixasleite.com.br/#especialistas): formação e atuação de Carla Seixas e Larissa Leite
+- [Perguntas frequentes](https://seixasleite.com.br/#faq): prazos trabalhistas, BPC/LOAS, atendimento e documentos
+- [Contato](https://seixasleite.com.br/#contato): formulário encaminhado ao WhatsApp do escritório
+
+## Contato
+
+- [WhatsApp (92) 99326-0101](https://wa.me/5592993260101): canal principal de atendimento
+- [Instagram @seixaseleite.adv](https://www.instagram.com/seixaseleite.adv/): orientações e conteúdos informativos
+
+## Optional
+
+- [Conteúdo completo](https://seixasleite.com.br/llms-full.txt): serviços, especialistas e perguntas frequentes em texto
