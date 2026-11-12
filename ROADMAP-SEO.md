@@ -24,10 +24,13 @@ Site: https://seixasleite.com.br
 
 ## 3. Dados que faltam no site (quem faz: escritório envia, Claude aplica)
 
-- [ ] Números reais de OAB das sócias e da sociedade, hoje com zeros
+- [x] Números de OAB das sócias e CNPJ no site (12/11/2026)
+- [ ] Número de registro da sociedade na OAB, se ela quiser exibir
 - [ ] Depoimentos reais com autorização, hoje com texto provisório
-- [ ] Confirmar o nome oficial da sociedade e usar um só em todo o site e nos dados estruturados
-- [ ] Fotos do escritório e do banner das sócias
+- [x] Nome oficial "Seixas & Leite Sociedade de Advogados" no site e nos dados estruturados
+- [x] Fotos do escritório e do banner (12/11/2026)
+- [ ] Foto vertical do banner para celular
+- [ ] Confirmar o encarregado de dados (LGPD) e um e-mail para a Política de Privacidade
 - [ ] Decidir se o endereço completo aparece no site e nos dados estruturados
 
 ## 4. Conteúdo (contínuo, é o que faz as IAs citarem)

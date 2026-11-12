@@ -238,6 +238,31 @@
     reels.forEach((r) => reelObs.observe(r));
   }
 
+  /* ---------- Fotos do escritório: ampliar ao clicar ---------- */
+  const gallery = $(".office__gallery");
+  if (gallery) {
+    const box = document.createElement("dialog");
+    box.className = "lightbox";
+    box.innerHTML = '<button class="lightbox__close" type="button" aria-label="Fechar foto">×</button><img alt="">';
+    document.body.append(box);
+    const big = $("img", box);
+    $$(".slot", gallery).forEach((fig) => {
+      const img = $("img", fig);
+      fig.tabIndex = 0;
+      fig.setAttribute("role", "button");
+      fig.setAttribute("aria-label", `Ampliar foto: ${img.alt}`);
+      const open = () => {
+        if (fig.classList.contains("is-empty")) return;
+        big.src = img.currentSrc || img.src;
+        big.alt = img.alt;
+        box.showModal();
+      };
+      fig.addEventListener("click", open);
+      fig.addEventListener("keydown", (e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), open()));
+    });
+    box.addEventListener("click", (e) => e.target !== big && box.close());
+  }
+
   /* ---------- Revelar ao rolar ---------- */
   const revealObs = new IntersectionObserver(
     (entries) =>
