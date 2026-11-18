@@ -59,7 +59,7 @@
     if (sec) sectionObs.observe(sec);
   });
   // Seções sem link no menu limpam o destaque
-  $$("#inicio, #checklist, #depoimentos, #faq").forEach((s) =>
+  $$("#inicio, #checklist, #instagram, #faq").forEach((s) =>
     new IntersectionObserver(
       ([en]) => en.isIntersecting && navLinks.forEach((l) => l.classList.remove("is-current")),
       { rootMargin: "-45% 0px -50% 0px" }
@@ -151,44 +151,6 @@
       btn.setAttribute("aria-expanded", open);
       btn.firstChild.textContent = open ? "Fechar " : "Ver formação ";
     });
-  });
-
-  /* ---------- Depoimentos: carrossel ---------- */
-  $$("[data-carousel]").forEach((car) => {
-    const track = $(".carousel__track", car);
-    const cards = $$(".quote-card", track);
-    const dotsWrap = $(".carousel__dots", car);
-    let index = 0;
-    let auto;
-    const perView = () => (innerWidth <= 640 ? 1 : innerWidth <= 980 ? 2 : 3);
-    const maxIndex = () => Math.max(0, cards.length - perView());
-
-    const build = () => {
-      dotsWrap.innerHTML = "";
-      for (let i = 0; i <= maxIndex(); i++) {
-        const b = document.createElement("button");
-        b.setAttribute("aria-label", `Ir para o depoimento ${i + 1}`);
-        b.addEventListener("click", () => go(i));
-        dotsWrap.append(b);
-      }
-      go(Math.min(index, maxIndex()));
-    };
-    const go = (i) => {
-      const max = maxIndex();
-      index = i > max ? 0 : i < 0 ? max : i;
-      track.style.transform = `translateX(${-cards[index].offsetLeft}px)`;
-      $$("button", dotsWrap).forEach((d, n) => d.classList.toggle("is-active", n === index));
-      clearInterval(auto);
-      if (!reduceMotion) auto = setInterval(() => go(index + 1), 6000);
-    };
-    $(".arrow--next", car).addEventListener("click", () => go(index + 1));
-    $(".arrow--prev", car).addEventListener("click", () => go(index - 1));
-    car.addEventListener("mouseenter", () => clearInterval(auto));
-    car.addEventListener("mouseleave", () => go(index));
-    swipe(track, (dir) => go(index + dir));
-    let rt;
-    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(build, 150); });
-    build();
   });
 
   /* ---------- Reels do Instagram ---------- */

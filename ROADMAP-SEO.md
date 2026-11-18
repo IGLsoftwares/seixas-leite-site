@@ -26,7 +26,7 @@ Site: https://seixasleite.com.br
 
 - [x] Números de OAB das sócias e CNPJ no site (12/11/2026)
 - [ ] Número de registro da sociedade na OAB, se ela quiser exibir
-- [ ] Depoimentos reais com autorização, hoje com texto provisório
+- [ ] Depoimentos reais com autorização (seção retirada do site em 18/11/2026 até chegarem)
 - [x] Nome oficial "Seixas & Leite Sociedade de Advogados" no site e nos dados estruturados
 - [x] Fotos do escritório e do banner (12/11/2026)
 - [ ] Foto vertical do banner para celular

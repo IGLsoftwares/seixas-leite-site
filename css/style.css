@@ -141,7 +141,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn:disabled::before { display: none; }
 .btn:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
-:is(.hero, .checklist, .duo, .testimonials, .contact, .footer, .menu-mobile) :focus-visible { outline-color: var(--sand); }
+:is(.hero, .checklist, .duo, .contact, .footer, .menu-mobile) :focus-visible { outline-color: var(--sand); }
 
 .link-arrow { display: inline-flex; align-items: center; gap: .5em; color: var(--coffee); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
 .link-arrow:hover .ico { transform: translateX(4px); }
@@ -351,22 +351,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .slide.is-active .slide__content > :nth-child(3) { transition-delay: .6s; }
 .slide.is-active .slide__content > :nth-child(4) { transition-delay: .75s; }
 
-/* Setas do carrossel de depoimentos */
-.arrow {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 237, 227, .4);
-  background: rgba(46, 24, 10, .25);
-  color: var(--cream);
-  display: grid;
-  place-items: center;
-  backdrop-filter: blur(6px);
-  transition: background .3s, color .3s, transform .3s var(--ease);
-}
-.arrow:hover { background: var(--sand); color: var(--coffee-ink); transform: scale(1.06); }
-.arrow--prev .ico { transform: rotate(180deg); }
-
 .hero__scroll {
   position: absolute;
   z-index: 3;
@@ -393,7 +377,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .slide .slide__media.is-empty::before { background-position: center 22%, center; background-size: auto 46%, cover; }
   .slide__actions .btn { flex: 1 1 100%; }
   .hero__scroll { display: none; }
-  .arrow { width: 44px; height: 44px; }
 }
 
 /* ---------- Faixa (marquee) ---------- */
@@ -693,41 +676,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .reel { flex: 0 0 62%; scroll-snap-align: center; }
   .reel:hover, .reel.is-sound { transform: none; }
 }
-
-/* =========================================================
-   DEPOIMENTOS
-   ========================================================= */
-.testimonials { background: linear-gradient(160deg, var(--navy), var(--navy-deep) 70%); color: var(--cream); overflow: hidden; }
-.testimonials::before { content: ""; position: absolute; inset: 0; background-image: var(--marble-tex); background-size: 600px; opacity: .25; mix-blend-mode: screen; pointer-events: none; }
-.section__head--light .eyebrow { color: var(--sand); }
-.carousel { position: relative; }
-.carousel__viewport { overflow: hidden; }
-.carousel__track { --gap: 20px; display: flex; gap: var(--gap); transition: transform .8s var(--ease); touch-action: pan-y; }
-.quote-card {
-  flex: 0 0 calc((100% - var(--gap) * 2) / 3);
-  display: flex;
-  flex-direction: column;
-  padding: 34px;
-  border: 1px solid rgba(240, 234, 220, .25);
-  border-radius: var(--radius);
-  background: rgba(245, 237, 227, .06);
-  position: relative;
-  transition: border-color .4s, background .4s;
-}
-.quote-card:hover { border-color: var(--sand); background: rgba(245, 237, 227, .09); }
-.quote-card::before { content: "“"; position: absolute; right: 24px; top: 6px; font-family: var(--f-logo); font-size: 6rem; color: var(--sand); opacity: .22; line-height: 1; }
-.quote-card .stars { color: var(--sand); display: flex; gap: 4px; }
-.quote-card .stars svg { width: 15px; height: 15px; }
-.quote-card blockquote { flex: 1; margin: 16px 0 22px; font-family: var(--f-serif); font-size: 1.3rem; line-height: 1.45; font-style: italic; color: rgba(245, 237, 227, .92); }
-.quote-card__who { margin: 0; display: flex; flex-direction: column; }
-.quote-card__who b { font-weight: 600; }
-.quote-card__who span { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sand); }
-.carousel__nav { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 34px; }
-.carousel__dots { display: flex; gap: 8px; }
-.carousel__dots button { width: 8px; height: 8px; border-radius: 9px; border: 0; padding: 0; background: rgba(245, 237, 227, .3); transition: width .4s var(--ease), background .3s; }
-.carousel__dots button.is-active { width: 28px; background: var(--sand); }
-@media (max-width: 980px) { .quote-card { flex-basis: calc((100% - var(--gap)) / 2); } }
-@media (max-width: 640px) { .quote-card { flex-basis: 100%; padding: 28px; } }
 
 /* =========================================================
    FAQ
@@ -1070,3 +1018,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 420px) { .brand__mark { height: calc(var(--header-h) * .64); } .brand__name { font-size: 12.5px; } }
 .footer__mark { display: block; width: auto; height: 84px; margin-bottom: 16px; }
 @media (max-width: 620px) { .footer__mark { height: 64px; margin: 0; } }
+
+/* FAQ em creme para alternar com a seção do Instagram (branca) */
+.faq { background: var(--cream); }
